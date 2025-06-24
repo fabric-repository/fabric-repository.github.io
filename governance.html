@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Fabric Repository</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Simple line icons-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <div class="topnav">
+            <a href="index.html">Fabric</a></li>
+            <a class="index.html" href="index.html">Home</a>
+            <a href="repository.html">Repository</a>
+            <a class=active href="#page-top">Governance</a>
+        </div>
+        <!--<section class="content-section bg-primary text-white text-left" id="gov">-->
+        <section class="content-section-non-home text-left" id="gov"></section>
+            <div class="container px-4 px-lg-5 text-left">
+                <div class="row gx-4 gx-lg-5 justify-content-left">
+                    <div class="col-lg-10">
+                        <h2>What types of governance did we see reflected in the repository?</h2>
+                        <p class="lead mb-5">
+                            <i>Outcome Governance and Institutional Governance</i> <br>
+                        </p>
+                        <h4>Outcome Governance</h1>
+                        <p>
+                        This type of governance is dependent on the level of human oversight and what actions they can take over the AI system to determine the final output. 
+                        The categories are defined below from <i>low human oversight</i> to <i>high</i>. <br> <br>
+                        *We note that the workflow diagram design for the outcome governance patterns below is different from the design of the initial use cases' workflow design in the repository. 
+                        We updated the shape and color designs for a cleaner look but the underlying logic remains the same. Future iterations of the repository will match the workflow design below. <br>
+                        <br><b>Autonomous AI</b>: The AI output is the final output of the workflow. No human can change the final output.    
+                        </p>
+                        <div class="image-container justify-content-center">
+                            <div class="image-item">
+                                <div class="image-frame">
+                                    <img src="assets/img/outcome-gov/autonomous-ai.png" alt=""
+                                        data-title="Autonomous AI">
+                                </div>
+                            </div>
+                        </div>
+                        <p> <br>
+                        <b>Conditionally Autonomous AI</b>: AI output could be the final output and thus acts autonomously, if it passes a safety check (e.g., accuracy threshold). Otherwise, the final output is determined by a human.      
+                        </p>
+                        <div class="image-container justify-content-center">
+                            <div class="image-item">
+                                <div class="image-frame">
+                                    <img src="assets/img/outcome-gov/conditionally-auto-ai.png" alt=""
+                                        data-title="Conditionally Autonomous AI">
+                                </div>
+                            </div>
+                        </div>
+                        <p> <br>
+                            <b>Human-Approved AI</b>: A human can accept the AI output as the final output or reject it (and not have a final output). If the human isn’t satisfied with the AI output, then they can modify the input data to potentially receive a different and better output. 
+                        </p>
+                        <div class="image-container justify-content-center">
+                            <div class="image-item">
+                                <div class="image-frame">
+                                    <img src="assets/img/outcome-gov/human-approved-ai.png" alt=""
+                                        data-title="Human Approved AI">
+                                </div>
+                            </div>
+                        </div>
+                        <p> <br>
+                         <b>Human-Led with AI-Assistance</b>:  The AI output could be used by a human in a larger final output if they are satisfied and agree with it. The final output of the system is more than the AI system output and involves more work by the human. <br>  
+                        </p>
+                        <div class="image-container justify-content-center">
+                            <div class="image-item">
+                                <div class="image-frame">
+                                    <img src="assets/img/outcome-gov/human-led-ai-assisted.png" alt=""
+                                        data-title="Human-Led with AI-Assistance">
+                                </div>
+                            </div>
+                        </div>
+                        <h4><br>Institutional Governance</h1>
+                        <p>
+                            This type of governance does not solely depend on the human oversight of the final output of the AI workflow; rather, it includes a broad range of interventions, 
+                            such as internal policies, industry standards, and regulatory compliance.                             The categories are outlined below from <i>less strict</i> to <i>more strict</i>.
+                        </p>
+                        <p>
+                            <b>Ad-Hoc Practice</b>: A mechanism subjectively determined by a developer or user (e.g., use of third-party software, what confidence threshold must be met for an AI).
+                        </p>
+                        <p>
+                            <b>Organization Best Practice</b>: A practice determined by the organization of teams inside of it (e.g., the AI could prioritize certain people so that they are checked by a healthcare provider more quickly, what the denial confidence is for insurance claims).
+                        </p>
+                        <p>
+                            <b>Organization Policy</b>: A policy requiring certain practices to be followed (e.g., open-source code, external groups must validate the AI).
+                        </p>
+                        <p>
+                            <b>Industry Standard</b>: A standard from industry best practice or an official standards body (e.g., health and equity impact assessment, accessibility standards, medical device standards).
+                        </p>
+                        <p>
+                            <b>Regulation</b>: The rules and processes necessary to enable a law (e.g., data impact assessment for GDPR).
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Structure -->
+            <div id="infoModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <img id="modalImage" src="" alt="">
+                    <div class="modal-title" id="modalTitle"></div>
+                    <div class="modal-description" id="modalDescription"></div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="copyright_container text-center">
+                <p>&copy; 2025 Fabric Repository</p>
+            </div>
+        </footer>
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

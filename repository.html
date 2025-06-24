@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Fabric Repository</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Simple line icons-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <div class="topnav">
+            <a href="index.html">Fabric</a></li>
+            <a href="index.html">Home</a>
+            <a class=active href="#page-top">Repository</a>
+            <a href="governance.html">Governance</a>
+        </div>
+        <!--<section class="content-section bg-primary text-white text-left" id="gov">-->
+        <section class="content-section-non-home text-left" id="gov"></section>    
+            <div class="container px-4 px-lg-5 text-left">
+                <div class="row gx-4 gx-lg-5 justify-content-left">
+                    <div class="col-lg-10">
+                        <h1>All AI Use Cases</h2>
+                        <p class="lead mb-5">
+                            The AI use cases are from the private, public, or civil society sectors. In the AI workflows, the dark blue colored shapes represent governance mechanisms and the diamonds are decision points.<p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-bottom: 20px;">
+                <input type="text" id="searchInput" placeholder="Search title, sector, or governance..."
+                    style="padding: 8px; margin-right: 10px; width: 300px; border-radius: 5px; border: 1px solid #ccc;">
+                <select id="sectorFilter" style="padding: 8px; margin-right: 10px;">
+                    <option value="">All Sectors</option>
+                    <option value="public">Public</option>
+                    <option value="private">Private</option>
+                    <option value="government">Civil Society</option>
+                </select>
+                <select id="governanceFilter" style="padding: 8px;">
+                    <option value="">All Outcome Governance Levels</option>
+                    <option value="autonomous ai">Autonomous AI</option>
+                    <option value="conditionally autonomous ai">Conditionally Autonomous AI</option>
+                    <option value="human-approved ai">Human-Approved AI</option>
+                    <option value="human-led with ai-assistance">Human-Led with AI-Assistance</option>
+                </select>
+            </div>
+            <div class="content-section-non-home image-container justify-content-center">
+                <div class="image-item">
+                    <div class="image-frame">
+                        <img src="assets/img/use-cases/credit-lending.png" alt="Image 2"
+                            data-title="Credit Lending Classifier"
+                            data-sector="Private"
+                            data-governance="Human-Approved AI"
+                            data-info=" <br>
+                            <b>Sector</b>: Private <br><br>
+                            <b>Task</b>: The AI system processes loan applications and generates approval recommendations. The recommendation is reviewed by one or more credit officers. The number of human reviewers depends on the size of the loan request, small loans may be reviewed by a single officer, while larger applications require the approval of multiple officers. These officers retain total authority to accept or reject the system recommended application result.
+                            <br> <br>
+                            <b>Intent</b>: The main intent behind the AI is to support credit officers and increase efficiency in the lending process.
+                            <br><br>
+                            <b>Risks</b>: There are potential fairness risks if the system embeds bias from historic data. Transparency on how recommendations are generated is critical. Over reliance on the systems output could reduce critical evaluation by officers, especially for borderline applications.
+                            <br><br>
+                            <b>Outcome Governance Category</b>: Human-Approved AI
+                            <br><br>
+                            <b>Institutional Governance Examples</b>: industry banking standards, data protection regulation, financial regulation, the number of analysts reviewing the loan depends on muliple factors (e.g., size of loan, credit trustworthiness of applicant)
+                            <br><br>
+                            <b>Explanation of workflow</b>: <br>
+                                <i>Input</i>: A customer's loan application, along with internal customer information and external credit reports are passed to the AI system. <br>
+                                <i>Process</i>: The AI system generates an approval recommendation for the application and feature importance scores which show how much each input feature influenced the system’s output. <br>
+                                <i>Output</i>: One or more credit officers review the AI's recommendation. The loan will ultimately be approved or denied, depending on the agreement of the credit officers with the AI recommendation.
+                                ">
+                    </div>
+                    <p class="image-title">Credit Lending Classifier</p>
+                </div>
+                <div class="image-item">
+                    <div class="image-frame">
+                        <img src="assets/img/use-cases/metadata.png" alt=""
+                            data-title="Metadata Extractor"
+                            data-sector="Civil Society"
+                            data-governance="Human-Approved AI"
+                            data-info=" <br>
+                            <b>Sector</b>: Civil Society <br><br>
+                            <b>Task</b>: A user can train an AI model which can extract metadata from text or documents using this AI system. If the user is satisfied with the performance of the outputted AI model, then they can use it.
+                            <br> <br>
+                            <b>Intent</b>: The main impact of this AI system is to save time for users who cannot afford to scan through hundreds of PDFs or paragraphs. The AI supports efficiency.               <br><br>
+                            <b>Risks</b>: The trained AI model could make mistakes when the user uses it.            <br><br>
+                            <b>Outcome Governance Category</b>: Human-Approved AI
+                            <br><br>
+                            <b>Institutional Governance Examples</b>: trained AI model is saved on a private server where only the user can access it (they cannot download it), allow for retraining of the produced AI model with different or new data
+                            <br><br>
+                            <b>Explanation of workflow</b>: <br>
+                                <i>Input</i>: The user submits samples to the metadata UI, which then extracts the necessary information to train an AI model. <br>
+                                <i>Process</i>: The AI generates its intial predictions based on the metadata structure given to the system. <br>
+                                <i>Output</i>: The user reviews the newly trained model's predictions and either: accepts the predictions so the trained model is finalized, or rejects the predictions so the trained model is deleted or re-trained with updated data.
+                                ">
+                    </div>
+                    <p class="image-title">Metadata Extractor</p>
+                </div>
+                <div class="image-item">
+                    <div class="image-frame">
+                    <img src="assets/img/use-cases/pdfseg.png" alt=""
+                        data-title="PDF Segmentator"
+                        data-sector="Civil Society"
+                        data-governance="Human-Approved AI"
+                        data-info=" <br>
+                        <b>Sector</b>: Civil Society <br><br>
+                        <b>Task</b>: A user requires their PDF to be segmented so inputs it to an AI system and then they receive the segmented PDF in a JSON to use.
+                        <br> <br>
+                        <b>Intent</b>: The AI system supports users in collecting information they need for different tasks.                 <br><br>
+                        <b>Risks</b>: The AI could make mistakes when annotating and segmenting the PDF.                 <br><br>
+                        <b>Outcome Governance Category</b>: 
+                        <br><br>
+                        <b>Institutional Governance Examples</b>: the AI models have been trained with state of the art techniques for PDF segmentation
+                        <br><br>
+                        <b>Explanation of workflow</b>: <br>
+                            <i>Input</i>: A user submits a single PDF to a UI. <br>
+                            <i>Process</i>: The UI calls on an already-trained AI model 1 to segment the PDF, and then the output is fed as the input to another already-trained AI model 2 which classifies the segmentations. The outputs of the two AI models are a JSON and an annotated PDF. <br>
+                            <i>Output</i>: The user checks the output of the PDF. If they are satisfied with the annotated PDF, they can accept it and use the JSON for their task. Otherwise, if they reject the annotated PDF, then the user chooses to not use the JSON.  
+                            ">
+                    </div>
+                    <p class="image-title">PDF Segmentator</p>
+                </div>
+                <div class="image-item">
+                    <div class="image-frame">
+                    <img src="assets/img/use-cases/assessment-tool.png" alt=""
+                        data-title="Personalized Feedback Assessor"
+                        data-sector="Public"
+                        data-governance="Conditionally Autonomous AI"
+                        data-info=" <br>
+                        <b>Sector</b>: Public<br><br>
+                        <b>Task</b>: Students take practice quizzes to prepare for exams and this AI system provides them with personalized feedback given the students' answers. Teachers can view the students' responses and performance as well as the AI's feedback.
+                        <br> <br>
+                        <b>Intent</b>: The AI system aims to provide students with personal feedback to speed up their learning process. It also saves teachers time by marking questions for students.                 <br><br>
+                        <b>Risks</b>: The AI system can make mistakes which could confuse students.                 <br><br>
+                        <b>Outcome Governance Category</b>: Conditionally Autonomous AI
+                        <br><br>
+                        <b>Institutional Governance Examples</b>: safety metrics and thresholds chosen, human oversight option for teachers if they want to review feedback before sending it to students
+                        <br><br>
+                        <b>Explanation of workflow</b>: <br>
+                            <i>Input</i>: A student takes a quiz and the quiz answers are inputted into the AI system. <br>
+                            <i>Process</i>: The AI system reviews the answers and generates feedback. The generated feedback responses are checked with safety metrics that relate to certain questions (e.g., is the answer scientifically correct, is harmful language used, and is it aligned with the student's knowledge?). If the score is below a certain threshold, then the feedback is sent to the teacher and the feedback is regenerated.  <br>
+                            <i>Output</i>: Once the AI system's feedback responses pass the safety metrics and/or the teacher approves of it, then the answer feedback is provided to the student.
+                            ">
+                    </div>
+                    <p class="image-title">Personalized Feedback Assessor</p>
+                </div>
+                <div class="image-item">
+                    <div class="image-frame">
+                    <img src="assets/img/use-cases/court.png" alt=""
+                        data-title="Court Support Chatbot"
+                        data-sector="Public"
+                        data-governance="Human-Led with AI-Assistance"
+                        data-info=" <br>
+                        <b>Sector</b>: Public<br><br>
+                        <b>Task</b>: This AI system generates responses to questions that users ask in a chat format. The AI pulls from information from the institution's website and can route users to speak with a human representative if required.
+                        <br> <br>
+                        <b>Intent</b>: The AI system provides immediate and around the clock responses to user questions, as well as reduce the workload of employees.                <br><br>
+                        <b>Risks</b>: Incorrect or poor-quality responses could misinform users. Sensitive information shared in the chat may not be completely secure in extreme instances.                 <br><br>
+                        <b>Outcome Governance Category</b>: Human-Led with AI-Assistance
+                        <br><br>
+                        <b>Institutional Governance Examples</b>: AI cyber-security standard, algorithmic transparency standard
+                        <br><br>
+                        <b>Explanation of workflow</b>: <br>
+                            <i>Input</i>: A user submits a query to the AI system. <br>
+                            <i>Process</i>: The AI system generates a response to the user in the chat. The user views the response and decides if they want to contine the chat. If the user wants to continue the chat, they continue asking questions.   <br>
+                            <i>Output</i>: If the user wants to continue the chat but speak to a human agent, they can be routed to an employee who can view their chat history and support them. If the user does not want to continue the chat, they can exit and end the chat.
+                            ">
+                    </div>
+                    <p class="image-title">Court Support Chatbot</p>
+                </div>
+                <div class="image-item">
+                    <div class="image-frame">
+                    <img src="assets/img/use-cases/claims.png" alt=""
+                        data-title="Insurance Claims Classifier"
+                        data-sector="Private"
+                        data-governance="Conditionally Autonomous AI"
+                        data-info=" <br>
+                        <b>Sector</b>: Private<br><br>
+                        <b>Task</b>: When customers submit straightforward automotive insurance claims a summary and recommendation is generated by the AI system. 
+                        <br> <br>
+                        <b>Intent</b>: The AI system is meant to increase productivity and profit by reducing the number of simple claims analysts must review.                <br><br>
+                        <b>Risks</b>: There is a risk of incorrectly denying legitimate claims if the model is overconfident and mistaken.                  <br><br>
+                        <b>Outcome Governance Category</b>: 
+                        <br><br>
+                        <b>Institutional Governance Examples</b>: denial confidence threshold choice, validating data provided, customer can appeal
+                        <br><br>
+                        <b>Explanation of workflow</b>: <br>
+                            <i>Input</i>: A customer submits an insurance claim. <br>
+                            <i>Process</i>: If the claim is unconfident, then it will be sent to a claim management system which valides the input data. If the claim is confident (in this case, if it fits a known pattern in historic data), then the AI system processes it and outputs a claim report. If the report recommends denying the claim with low confidence, then it will be sent to the claims management system for review.  <br>
+                            <i>Output</i>: If the AI generated report recommended denying the claim with high confidence, then the claim is automatically denied. Otherwise, a claims analyst reviews the claims passed through the claims management system and decides whether to approve each claim. 
+                            ">
+                    </div>
+                    <p class="image-title">Insurance Claims Classifier</p>
+                </div>
+                <div class="image-item">
+                    <div class="image-frame">
+                    <img src="assets/img/use-cases/physio-risk.png" alt=""
+                        data-title="Physio-Risk Reporter"
+                        data-sector="Private"
+                        data-governance="Autonomous AI"
+                        data-info=" <br>
+                        <b>Sector</b>: Private<br><br>
+                        <b>Task</b>: A user (a person over 65 years old) who has limited physical mobility uses this AI system to obtain a risk assessment with respect to their physio-related needs. The report with their risk score is for the user only but they could share it with any carers to request more support if necessary. The users often use the AI system multiple times to check-in on their mobility and physical health overtime.
+                        <br> <br>
+                        <b>Intent</b>: The report with their risk score is for the user only but they could share it with any carers to request more support if necessary. The users often use the AI system multiple times to check-in on their mobility and physical health overtime.                 <br><br>
+                        <b>Risks</b>: The person could injure themselves while doing the exercises or become fatigued.                 <br><br>
+                        <b>Outcome Governance Category</b>: Autonomous AI
+                        <br><br>
+                        <b>Institutional Governance Examples</b>: data protection regulation, a human physiotherapist must be present, user's ability to redo an exercise up to 3 times
+                        <br><br>
+                        <b>Explanation of workflow</b>: <br>
+                            <i>Input</i>: The user completes 12 exercises while being video recorded under the supervision of a human physiotherapist for safety. The video of the user is fed into an already trained AI model 1. <br>
+                            <i>Process</i>: The AI model 1 outputs the user's skeleton tracked from the skeleton video using deep learning and computer vision technology. An AI system handler reviews the skeleton video and decides if it is usable or if the user needs to re-complete the exercises in a new video. If the skeleton video is approved of, an already-trained AI model 2, a rule-based system, takes the skeleton video as input. <br>
+                            <i>Output</i>: Then, the AI model 2 outputs a PDF report for the user. 
+                            ">
+                    </div>
+                    <p class="image-title">Physio-Risk Reporter</p>
+                </div>
+                <div class="image-item">
+                    <div class="image-frame">
+                    <img src="assets/img/use-cases/writing.png" alt=""
+                        data-title="Writing Assistant"
+                        data-sector="Private"
+                        data-governance="Human-Led with AI-Assistance"
+                        data-info=" <br>
+                        <b>Sector</b>: Private<br><br>
+                        <b>Task</b>: A user who needs support writing, editing their writing, or brainstorming their ideas for writing can use this AI system.
+                        <br> <br>
+                        <b>Intent</b>: The AI system is meant to help users better communicate in their writing and to support human creativity, efficiency, and productivity.                <br><br>
+                        <b>Risks</b>: The user could become over-reliant on the AI system and begin to de-prioritize their own creativity and skills. The AI system could hallucinate or misunderstand the user's request. <br><br>
+                        <b>Outcome Governance Category</b>: 
+                        <br><br>
+                        <b>Institutional Governance Examples</b>: sensitivity filters from the AI provider
+                        <br><br>
+                        <b>Explanation of workflow</b>: <br>
+                            <i>Input</i>: The user submits a query to the AI system that includes a request for support in writing or editing. <br>
+                            <i>Process</i>: The AI system then provides some suggested writing in the document editor. The user can review the AI's output and accept or deny the change. The user can also write at any point.  <br>
+                            <i>Output</i>: When the user is satisfied with their writing in the document, the workflow finishes.
+                            ">
+                    </div>
+                    <p class="image-title">Writing Assistant</p>
+                </div>
+                <div class="image-item">
+                    <div class="image-frame">
+                    <img src="assets/img/use-cases/chest-detector.png" alt=""
+                        data-title="Chest X-Ray Abnormality Detector"
+                        data-sector="Public"
+                        data-governance="Human-Led with AI-Assistance"
+                        data-info=" <br>
+                        <b>Sector</b>: Public <br><br>
+                        <b>Task</b>: The AI system reviews a chest X-ray and provides an assessment of the risks flagged and notes where on the image the risks are for a radiologist to review. The AI system prioritizes more risky X-rays so the radiologist sees them first.
+                        <br> <br>
+                        <b>Intent</b>: The aim of the AI system is to increase the speed and accuracy of chest abnormality screening and prioritize the highest risk patients for review.                <br><br>
+                        <b>Risks</b>: The radiologist could become over-reliant on the AI system’s recommendations and exhibit automation bias. The AI system could make mistakes which could lead to a misdiagnosis of a patient or to a risk going undetected.                 <br><br>
+                        <b>Outcome Governance Category</b>: Human-Led with AI-Assistance
+                        <br><br>
+                        <b>Institutional Governance Examples</b>: data protection regulation, radiation regulation, prioritization score of X-rays for speedying up radiologist review, post-deployment monitoring for automation bias 
+                        <br><br>
+                        <b>Explanation of workflow</b>: <br>
+                            <i>Input</i>: The patient's chest X-ray image is sent to the AI system and the radiologist.  <br>
+                            <i>Process</i>: The AI system analyzes the X-ray image and makes a new image that overlays the original with points of concern flagged with confidence scores attached. The radiologist sees the original X-ray image first and then the image from the AI system. <br>
+                            <i>Output</i>: Based on the level of agreement with the AI system, the radiologist writes their final decision in a report where they make a diagnosis and recommend next steps.
+                            ">
+                    </div>
+                    <p class="image-title">Chest X-Ray Abnormality Detector</p>
+                </div>
+                <div class="image-item">
+                    <div class="image-frame">
+                    <img src="assets/img/use-cases/mental-health.png" alt=""
+                        data-title="Mental Health Triage Tool"
+                        data-sector="Public"
+                        data-governance="Autonomous AI"
+                        data-info=" <br>
+                        <b>Sector</b>: Public<br><br>
+                        <b>Task</b>: The AI system generates a preliminary patient report for healthcare providers based on their responses to intake forms.
+                        <br> <br>
+                        <b>Intent</b>: The AI system is intended to improve intake efficiency and thoroughness. <br><br>
+                        <b>Risks</b>: Patients could be mislabelled if they incorrectly answer or skip questions.   <br><br>
+                        <b>Outcome Governance Category</b>: Autonomous AI
+                        <br><br>
+                        <b>Institutional Governance Examples</b>: data protection regulation, medical device regulatory guidance, digital clinical safety standards, digital clinical safety assurance, equality and health impact assessment, lived experience digital group must sign off, project and clinical boards must sign off
+                        <br><br>
+                        <b>Explanation of workflow</b>: <br>
+                            <i>Input</i>: Patients respond to questions on mental health intake forms. <br>
+                            <i>Process</i>: The AI system will continue to provide the patient with forms until they are completed. It then generates a formulation report on the patient. <br>
+                            <i>Output</i>: The formulation report is reviewed by the healthcare provider alongside the patient. 
+                            ">
+                    </div>
+                    <p class="image-title">Mental Health Triage Tool</p>
+                </div>
+                <div class="image-item">
+                    <div class="image-frame">
+                    <img src="assets/img/use-cases/ct-scan.png" alt=""
+                        data-title="CT Scan Risk Detector"
+                        data-sector="Public"
+                        data-governance="Human-Led with AI-Assistance"
+                        data-info=" <br>
+                        <b>Sector</b>: Public <br><br>
+                        <b>Task</b>: When a patient receives a CT scan, an AI system analyses the scan, generates a secondary version with potential concerns flagged, and assigns a prioritization score to speed up its review by a radiologist. 
+                        <br> <br>
+                        <b>Intent</b>: The AI system is meant to support radiologists in spotting risks in the CT scan and ensure that urgent cases are viewed by radiologists more quickly.          <br><br>
+                        <b>Risks</b>:                  <br><br>
+                        <b>Outcome Governance Category</b>: Human-Led with AI-Assistance
+                        <br><br>
+                        <b>Institutional Governance Examples</b>: data protection regulation, data opt-out scheme
+                        <br><br>
+                        <b>Explanation of workflow</b>: <br>
+                            <i>Input</i>: The patient receives a CT scan which is sent to the AI system and the radiologist(?). <br>
+                            <i>Process</i>: The AI system generates a secondary capture of the scan and provides a prioritization score. <br>
+                            <i>Output</i>: The radiologist reviews the original and secondary capture CT scans and creates their final report on the patient.
+                            ">
+                    </div>
+                    <p class="image-title">CT Scan Risk Detector</p>
+                </div>
+                <div class="image-item">
+                    <div class="image-frame">
+                    <img src="assets/img/use-cases/note-taker.png" alt=""
+                        data-title="Consultation AI Note-Taker"
+                        data-sector="Public"
+                        data-governance="Human-Led with AI-Assistance"
+                        data-info=" <br>
+                        <b>Sector</b>: Public <br><br>
+                        <b>Task</b>: When a patient has a consultation with their doctor, this AI system generates notes and a referral letter if needed for their doctor to review and use as needed.
+                        <br> <br>
+                        <b>Intent</b>: This AI system is meant to improve note taking efficiency and thoroughness.                <br><br>
+                        <b>Risks</b>: Clinicians could become over reliant on the system for documentation. The AI system could misunderstand something the patient said.               <br><br>
+                        <b>Outcome Governance Category</b>: Human-Led with AI-Assistance
+                        <br><br>
+                        <b>Institutional Governance Examples</b>: data protection regulation, digital clinical safety standards, equality and health impact assessment
+                        <br><br>
+                        <b>Explanation of workflow</b>: <br>
+                            <i>Input</i>: The patient's consultation with their doctor is recorded and passed to the AI system, with patient approval. <br>
+                            <i>Process</i>: The AI system generates consultation notes and predicts if the patient requires a referral. If so, it drafts a referral letter for the clinician.  <br>
+                            <i>Output</i>: The clinician reviews the consultation notes, modifies if needed, and then adds the notes to the patient's consultation summary in their chart. If the AI system was correct about a referral, the clinician reviews and can edit the proposed letter before sending. 
+                            ">
+                    </div>
+                    <p class="image-title">Consultation AI Note-Taker</p>
+                </div>
+            </div>
+            <!-- Modal Structure -->
+            <div id="infoModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <img id="modalImage" src="" alt="">
+                    <div class="modal-title" id="modalTitle"></div>
+                    <div class="modal-description" id="modalDescription"></div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="copyright_container text-center">
+                <p>&copy; 2025 Fabric Repository</p>
+            </div>
+        </footer>
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
