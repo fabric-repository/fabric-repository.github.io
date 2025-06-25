@@ -3,6 +3,27 @@
 * Copyright 2013-2025 Start Bootstrap
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-stylish-portfolio/blob/master/LICENSE)
 */
+
+document.querySelectorAll(".copy").forEach(copyButton => {
+    copyButton.addEventListener("click", () => {
+        const targetElement = document.querySelector(copyButton.dataset.copy);
+        const textToCopy = targetElement.textContent;
+
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            const label = copyButton.querySelector(".copy-label");
+            const originalText = label.textContent;
+
+            copyButton.disabled = true;
+            label.textContent = "Copied!";
+
+            setTimeout(() => {
+                copyButton.disabled = false;
+                label.textContent = originalText;
+            }, 10000);
+        })
+    })
+  });
+
 window.addEventListener('DOMContentLoaded', event => {
 
     const sidebarWrapper = document.getElementById('sidebar-wrapper');
@@ -79,25 +100,6 @@ function fadeIn(el, display) {
     })();
 };
 
-document.querySelectorAll(".copy").forEach(copyButton => {
-    copyButton.addEventListener("click", () => {
-        const targetElement = document.querySelector(copyButton.dataset.copy);
-        const textToCopy = targetElement.textContent;
-
-        navigator.clipboard.writeText(textToCopy).then(() => {
-            const label = copyButton.querySelector(".copy-label");
-            const originalText = label.textContent;
-
-            copyButton.disabled = true;
-            label.textContent = "Copied!";
-
-            setTimeout(() => {
-                copyButton.disabled = false;
-                label.textContent = originalText;
-            }, 1000);
-        })
-    })
-  });
 
 /* MJ additions with support from AI*/
 const modal = document.getElementById("infoModal");
