@@ -79,6 +79,26 @@ function fadeIn(el, display) {
     })();
 };
 
+document.querySelectorAll(".copy").forEach(copyButton => {
+    copyButton.addEventListener("click", () => {
+        const targetElement = document.querySelector(copyButton.dataset.copy);
+        const textToCopy = targetElement.textContent;
+
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            const label = copyButton.querySelector(".copy-label");
+            const originalText = label.textContent;
+
+            copyButton.disabled = true;
+            label.textContent = "Copied!";
+
+            setTimeout(() => {
+                copyButton.disabled = false;
+                label.textContent = originalText;
+            }, 1000);
+        })
+    })
+  });
+
 /* MJ additions with support from AI*/
 const modal = document.getElementById("infoModal");
 const modalTitle = document.getElementById("modalTitle");
@@ -139,4 +159,6 @@ const searchInput = document.getElementById("searchInput");
   // Event listeners
   searchInput.addEventListener("input", filterGallery);
   sectorFilter.addEventListener("change", filterGallery);
-  governanceFilter.addEventListener("change", filterGallery);
+  governanceFilter.addEventListener("change", filterGallery); 
+
+

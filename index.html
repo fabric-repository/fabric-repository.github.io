@@ -28,7 +28,7 @@
                 <a href="governance.html">Governance</a>
             </div>
         </header>
-        <!-- Portfolio-->
+        <!-- Title-->
         <section class="content-section text-center" id="portfolio">
             <div class="container px-4 px-lg-5">
                     <br><br>
@@ -38,10 +38,9 @@
         <!-- About-->
         <section class="content-section bg-primary text-black justify-content-left" id="about">
             <div class="container px-4 px-lg-5">
+                <h2>How is governance imposed on deployed AI systems?</h2>
                 <div class="content-section">
-                    <br>    
-                    <h2>How is governance imposed on deployed AI systems?</h2>
-                        <p class="lead mb-5">
+                                            <p class="lead mb-5">
                             To address this question, we release Fabric, a public repository of AI system deployments. <br> <br>
                         The initial AI use cases were collected through semi-structured interviews with AI practitioners, 
                                     where we learned about the AI workflows, governance mechanisms, and co-designed diagrams of the AI workflows. </p>
@@ -51,9 +50,9 @@
             </div>
         </section>
         <section class="content-section justify-content-left" id="use">
-            <div class="container px-4 px-lg-5">    
+            <div class="container px-4 px-lg-5">  
+            <h2>How to Use the Repository</h2>
             <div class="content-section">
-                    <h2>How to Use the Repository</h2>
                     <p class="lead mb-5"><b>Aim:</b> We hope the repository can serve as a knowledge base for AI practitioners, policymakers, and researchers in the AI and governance spaces. <br> <br>
                     <b>Contribute:</b> If you would like to submit a use case to the repository, see our submission link and instructions: </p>
                     <!--<b>Citation:</b> If you would like to cite the repository...</p>-->
@@ -62,14 +61,25 @@
             </div>
             </div>
         </section>
-        <!-- Acks-->
-        <section class="content-section-acks bg-light" id="acks">
-            <div class="container px-4 px-lg-5 justify-content-left">
-                <h3>Acknowledgements</h3>
-                <p>
-                <i>We are grateful for our team who collected and analyzed the initial use cases:</i> Mackenzie Jorgensen, Kendall Brogle, Umang Bhatt, Jillian Powers, Adrian Weller, Arina Shah, Katherine Collins, Lujain Ibrahim, Petra Ivanovic, Noah Broestl, Gabriel Piles, Paul Dongha, and Hatim Abdulhussein. <br> <br>
-                <i>We would like to thank the following people for their helpful feedback:</i> Diletta Huyskes and the Alan Turing Institute's Ethics Review board. <br><br>
-                </p>
+        <section id="citation">
+            <div class="content-section bg-primary text-black justify-content-left">
+                <div class="container px-4 px-lg-5">
+                <h2>How to Cite the Repository</h2>
+                <div class="content-section citation-bibtex">
+                    <code>
+                        @misc{fabric-repository2025,<br>
+                            &nbsp;&nbsp;author       = {Jorgensen, Mackenzie and Brogle, Kendall and Bhatt, Umang and Powers, Jillian and Weller, Adrian and Shah, Arina and Collins, Katherine and Ibrahim, Lujain and Ivanovic, Petra and Broestl, Noah and Piles, Gabriel and Dongha, Paul and Abdulhussein, Hatim}, <br>
+                            &nbsp;&nbsp;title        = {Fabric Repository}, <br>
+                            &nbsp;&nbsp;year         = {2025}, <br>
+                            &nbsp;&nbsp;howpublished = {\url{https://fabric-repository.github.io/}}                    
+                        }
+                    </code>
+                </div>
+                    <button type="button" class="copy" data-copy=".citation-bibtex">
+                        <ion-icon name="copy-outline" class="copy-icon"></ion-icon>
+                        <span class="copy-label">Copy</span>
+                    </button>
+                </div>
             </div>
         </section>
         <footer>
@@ -77,12 +87,14 @@
                 <p>&copy; 2025 Fabric Repository</p>
             </div>
         </footer>
-
         <!-- Scroll to Top Button-->
         <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <!-- Icons -->
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     </body>
 </html>
