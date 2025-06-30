@@ -93,7 +93,7 @@
                             <b>Risks</b>: The trained AI model could make mistakes when the user uses it.            <br><br>
                             <b>Outcome Governance Category</b>: Human-Approved AI
                             <br><br>
-                            <b>Institutional Governance Examples</b>: trained AI model is saved on a private server where only the user can access it (they cannot download it), allow for retraining of the produced AI model with different or new data
+                            <b>Institutional Governance Examples</b>: models should be pulled from a specific commit number (ad-hoc practice), services that use the AI should have a release version (ad-hoc practice), all benchmarks should be saved in a public repository (organization best practice), test sets to assess that performance is maintained (best practice), code implemented is open-sourced (organization policy), services should be covered with unit tests, integration tests, and end-to-end tests (organization policy)
                             <br><br>
                             <b>Explanation of workflow</b>: <br>
                                 <i>Input</i>: The user submits samples to the metadata UI, which then extracts the necessary information to train an AI model. <br>
@@ -117,7 +117,7 @@
                         <b>Risks</b>: The AI could make mistakes when annotating and segmenting the PDF.                 <br><br>
                         <b>Outcome Governance Category</b>: 
                         <br><br>
-                        <b>Institutional Governance Examples</b>: the AI models have been trained with state of the art techniques for PDF segmentation
+                        <b>Institutional Governance Examples</b>: models should be pulled from a specific commit number (ad-hoc practice), services that use the AI should have a release version (ad-hoc practice), all benchmarks should be saved in a public repository (organization best practice), test sets to assess that performance is maintained (best practice), code implemented is open-sourced (organization policy), services should be covered with unit tests, integration tests, and end-to-end tests (organization policy)
                         <br><br>
                         <b>Explanation of workflow</b>: <br>
                             <i>Input</i>: A user submits a single PDF to a UI. <br>
@@ -342,6 +342,31 @@
                             ">
                     </div>
                     <p class="image-title">Consultation AI Note-Taker</p>
+                </div>
+                <div class="image-item">
+                    <div class="image-frame">
+                    <img src="assets/img/use-cases/carer-ai-updated.png" alt=""
+                        data-title="Carer-AI Kit Risk Assessment"
+                        data-sector="Public"
+                        data-governance="Autonomous AI"
+                        data-info=" <br>
+                        <b>Sector</b>: Public <br><br>
+                        <b>Functional Sector</b>: Health <br><br>
+                        <b>Task</b>: The AI system is a part of a platform used to validate a carer’s measurements for their patient’s biomarkers (e.g., heart rate, pulse, and blood pressure) and to provide a risk score for the patient.
+                        <br> <br>
+                        <b>Intent</b>:  The AI system is intended to support in the accurate measurement of a patient’s biomarkers by flagging to the carer when a measurement needs to be retaken. Then, the risk score output is supposed to support the carer in determining the next course of action for the patient.                <br><br>
+                        <b>Risks</b>: A risk of the system is that the carer or nurse is not confident in its readings or in their ability to use the devices for biomarker measurements. Another risk is that the medical device has internal bias towards certain groups. Data safety is also a risk is the carer decides that emergency services need to be called then the data sharing must follow regulation and protocol.               <br><br>
+                        <b>Outcome Governance Category</b>: Autonomous AI
+                        <br><br>
+                        <b>Institutional Governance Examples</b>: data protection (regulation), medical device compliance (regulation), healthcare compliance (regulation), digital clinical safety standards (industry standards)
+                        <br><br>
+                        <b>Explanation of workflow</b>: <br>
+                            <i>Input</i>: A carer takes biomarker measurements of a patient.  <br>
+                            <i>Process</i>: While they are conducting these measurements, an AI system validates that the measurements are accurately taken or flags if measurements need retaking.   <br>
+                            <i>Output</i>: The AI system generates a risk score for the carer to review and if needed, the carer take further action for the patient (e.g., request further medical help).  
+                            ">
+                    </div>
+                    <p class="image-title">Carer-AI Kit Risk Assessment</p>
                 </div>
             </div>
             <!-- Modal Structure -->
