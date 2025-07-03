@@ -165,7 +165,7 @@ const searchInput = document.getElementById("searchInput");
   // Event listeners
   searchInput.addEventListener("input", filterGallery);
   sectorFilter.addEventListener("change", filterGallery);
-  governanceFilter.addEventListener("change", filterGallery); 
   functionalSectorFilter.addEventListener("change", filterGallery);
+  governanceFilter.addEventListener("change", filterGallery); 
 
 
