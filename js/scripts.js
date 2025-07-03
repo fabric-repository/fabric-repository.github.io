@@ -153,7 +153,7 @@ const searchInput = document.getElementById("searchInput");
       const governance = img.getAttribute("data-governance")?.toLowerCase() || "";
       const functional = img.getAttribute("data-functional")?.toLowerCase() || "";
 
-      const matchesSearch = !query || title.includes(query) || sector.includes(query) || governance.includes(query);
+      const matchesSearch = !query || title.includes(query) || sector.includes(query) || functional.includes(query) || governance.includes(query);
       const matchesSector = !sectorValue || sector === sectorValue;
       const matchesGovernance = !governanceValue || governance === governanceValue;
       const matchesFunctional = !functionalSectorValue || functional === functionalSectorValue;
