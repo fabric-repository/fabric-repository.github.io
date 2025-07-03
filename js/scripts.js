@@ -158,7 +158,7 @@ const searchInput = document.getElementById("searchInput");
       const matchesGovernance = !governanceValue || governance === governanceValue;
       const matchesFunctional = !functionalSectorValue || functional === functionalSectorValue;
 
-      item.style.display = (matchesSearch && matchesSector && matchesGovernance && matchesFunctional) ? "block" : "none";
+      item.style.display = (matchesSearch && matchesSector && matchesFunctional && matchesGovernance ) ? "block" : "none";
     });
   }
 
