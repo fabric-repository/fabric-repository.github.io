@@ -136,36 +136,42 @@ if (e.target === modal) {
 });
 
 const searchInput = document.getElementById("searchInput");
-  const sectorFilter = document.getElementById("sectorFilter");
-  const governanceFilter = document.getElementById("governanceFilter");
-  const functionalSectorFilter = document.getElementById("functionalSectorFilter");
+const sectorFilter = document.getElementById("sectorFilter");
+const governanceFilter = document.getElementById("governanceFilter");
+const functionalSectorFilter = document.getElementById("functionalSectorFilter");
+const institutionalCheckboxes = document.querySelectorAll('input[name="institutional"]');
 
-  function filterGallery() {
+function filterGallery() {
     const query = searchInput.value.toLowerCase();
     const sectorValue = sectorFilter.value.toLowerCase();
     const governanceValue = governanceFilter.value.toLowerCase();
     const functionalSectorValue = functionalSectorFilter.value.toLowerCase();
+    const selectedInstitutional = Array.from(institutionalCheckboxes).filter(cb => cb.checked).map(cb => cb.value.toLowerCase());
 
     document.querySelectorAll(".image-item").forEach(item => {
-      const img = item.querySelector("img");
-      const title = img.getAttribute("data-title")?.toLowerCase() || "";
-      const sector = img.getAttribute("data-sector")?.toLowerCase() || "";
-      const governance = img.getAttribute("data-governance")?.toLowerCase() || "";
-      const functional = img.getAttribute("data-functional")?.toLowerCase() || "";
+        const img = item.querySelector("img");
+        const title = img.getAttribute("data-title")?.toLowerCase() || "";
+        const sector = img.getAttribute("data-sector")?.toLowerCase() || "";
+        const governance = img.getAttribute("data-governance")?.toLowerCase() || "";
+        const functional = img.getAttribute("data-functional")?.toLowerCase() || "";
+        const institutionalAttr = img.getAttribute("data-institutional")?.toLowerCase() || "";
 
-      const matchesSearch = !query || title.includes(query) || sector.includes(query) || functional.includes(query) || governance.includes(query);
-      const matchesSector = !sectorValue || sector === sectorValue;
-      const matchesGovernance = !governanceValue || governance === governanceValue;
-      const matchesFunctional = !functionalSectorValue || functional === functionalSectorValue;
+        const institutionalTags = institutionalAttr.split(",").map(tag => tag.trim());
+        const matchesInstitutional = selectedInstitutional.length === 0 || selectedInstitutional.some(tag => institutionalTags.includes(tag))
+        
+        const matchesSearch = !query || title.includes(query) || sector.includes(query) || functional.includes(query) || governance.includes(query) || institutionalAttr.includes(query);
+        const matchesSector = !sectorValue || sector === sectorValue;
+        const matchesGovernance = !governanceValue || governance === governanceValue;
+        const matchesFunctional = !functionalSectorValue || functional === functionalSectorValue;
 
-      item.style.display = (matchesSearch && matchesSector && matchesFunctional && matchesGovernance ) ? "block" : "none";
+        item.style.display = (matchesSearch && matchesSector && matchesFunctional && matchesGovernance && matchesInstitutional) ? "block" : "none";
     });
-  }
+}
 
-  // Event listeners
-  searchInput.addEventListener("input", filterGallery);
-  sectorFilter.addEventListener("change", filterGallery);
-  functionalSectorFilter.addEventListener("change", filterGallery);
-  governanceFilter.addEventListener("change", filterGallery); 
-
+// Event listeners
+searchInput.addEventListener("input", filterGallery);
+sectorFilter.addEventListener("change", filterGallery);
+functionalSectorFilter.addEventListener("change", filterGallery);
+governanceFilter.addEventListener("change", filterGallery); 
+institutionalCheckboxes.forEach(cb => cb.addEventListener("change", filterGallery));
 
