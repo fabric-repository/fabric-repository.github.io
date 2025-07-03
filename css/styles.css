@@ -11305,3 +11305,35 @@ footer.footer .social-link:hover {
 .copy:disabled {
    background: green;
 }
+
+.custom-multiselect {
+  position: relative;
+  display: inline-block;
+  width: 300px;
+}
+
+.select-box {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px;
+  cursor: pointer;
+  background: #fff;
+}
+
+.checkboxes {
+  display: none;
+  position: absolute;
+  border: 1px solid #ccc;
+  background: white;
+  padding: 10px;
+  z-index: 1;
+  max-height: 200px;
+  overflow-y: auto;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.checkboxes label {
+  display: block;
+  margin-bottom: 5px;
+}

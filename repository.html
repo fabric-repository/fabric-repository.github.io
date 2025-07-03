@@ -71,6 +71,18 @@
                     <option value="regulation">Regulation</option>
                 </select>
             </div>
+            <div class="filter-group" style="display: inline-block; position: relative;">
+                <div class="filter-dropdown" onclick="toggleInstitutionalDropdown()" style="padding: 8px; border: 1px solid #ccc; border-radius: 5px; width: 300px;">
+                    Institutional Oversight Levels ▼
+                </div>
+                <div id="institutionalCheckboxes" class="checkbox-dropdown" style="display: none; position: absolute; background: white; border: 1px solid #ccc; padding: 10px; z-index: 10; width: 100%; box-shadow: 0px 2px 6px rgba(0,0,0,0.1);">
+                    <label><input type="checkbox" value="ad-hoc practice">Ad-Hoc Practice</label>
+                    <label><input type="checkbox" value="organization best practice">Organization Best Practice</label>
+                    <label><input type="checkbox" value="organization policy">Organization Policy</label>
+                    <label><input type="checkbox" value="industry standard">Industry Standard</label>
+                    <label><input type="checkbox" value="regulation">Regulation></label>
+                </div>
+            </div>
             <div class="content-section-non-home image-container justify-content-center">
                 <div class="image-item">
                     <div class="image-frame">

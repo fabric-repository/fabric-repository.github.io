@@ -135,6 +135,16 @@ if (e.target === modal) {
 }
 });
 
+function toggleInstitutionalDropdown() {
+  const dropdown = document.getElementById("institutionalCheckboxes");
+  dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+}
+
+function getSelectedInstitutional() {
+  return Array.from(document.querySelectorAll('#institutionalCheckboxes input[type="checkbox"]:checked'))
+    .map(cb => cb.value.toLowerCase());
+}
+
 const searchInput = document.getElementById("searchInput");
 const sectorFilter = document.getElementById("sectorFilter");
 const governanceFilter = document.getElementById("governanceFilter");
@@ -147,7 +157,7 @@ function filterGallery() {
     const sectorValue = sectorFilter.value.toLowerCase();
     const governanceValue = governanceFilter.value.toLowerCase();
     const functionalSectorValue = functionalSectorFilter.value.toLowerCase();
-    const selectedInstitutional = Array.from(institutionalFilter.selectedOptions).map(opt => opt.value.toLowerCase());
+    const selectedInstitutional = getSelectedInstitutional;
 
     document.querySelectorAll(".image-item").forEach(item => {
         const img = item.querySelector("img");
