@@ -44,6 +44,17 @@
                     <option value="private">Private</option>
                     <option value="government">Civil Society</option>
                 </select>
+                <select id="functionalSectorFilter" style="padding: 8px;">
+                    <option value="">All Domains</option>
+                    <option value="health">Health</option>
+                    <option value="technology">Technology</option>
+                    <option value="finance">Finance</option>
+                    <option value="justice">Justice</option>
+                    <option value="human rights">Human Rights</option>
+                    <option value="communication">Communication</option>
+                    <option value="education">Education</option>
+                    <option value="public services">Public Services</option>
+                </select>
                 <select id="governanceFilter" style="padding: 8px;">
                     <option value="">All Outcome Governance Levels</option>
                     <option value="autonomous ai">Autonomous AI</option>
@@ -59,6 +70,7 @@
                             data-title="Credit Lending Classifier"
                             data-sector="Private"
                             data-governance="Human-Approved AI"
+                            data-functional="Finance"
                             data-info=" <br>
                             <b>Sector</b>: Private <br><br>
                             <b>Functional Sector</b>: Finance <br><br>
@@ -86,6 +98,7 @@
                             data-title="Metadata Extractor"
                             data-sector="Civil Society"
                             data-governance="Human-Approved AI"
+                            data-functional="Human Rights"
                             data-info=" <br>
                             <b>Sector</b>: Civil Society <br><br>
                             <b>Functional Sector</b>: Human Rights <br><br>
@@ -111,6 +124,7 @@
                         data-title="PDF Segmentator"
                         data-sector="Civil Society"
                         data-governance="Human-Approved AI"
+                        data-functional="Human Rights"
                         data-info=" <br>
                         <b>Sector</b>: Civil Society <br><br>
                         <b>Functional Sector</b>: Human Rights <br><br>
@@ -136,6 +150,7 @@
                         data-title="Personalized Feedback Assessor"
                         data-sector="Public"
                         data-governance="Conditionally Autonomous AI"
+                        data-functional="Education"
                         data-info=" <br>
                         <b>Sector</b>: Public<br><br>
                         <b>Functional Sector</b>: Education <br><br>
@@ -161,6 +176,7 @@
                         data-title="Family Court Support Chatbot"
                         data-sector="Public"
                         data-governance="Human-Led with AI-Assistance"
+                        data-functional="Justice"
                         data-info=" <br>
                         <b>Sector</b>: Public<br><br>
                         <b>Functional Sector</b>: Justice <br><br>
@@ -186,6 +202,7 @@
                         data-title="Insurance Claims Classifier"
                         data-sector="Private"
                         data-governance="Conditionally Autonomous AI"
+                        data-functional="Finance"
                         data-info=" <br>
                         <b>Sector</b>: Private<br><br>
                         <b>Functional Sector</b>: Finance <br><br>
@@ -211,6 +228,7 @@
                         data-title="Physio-Risk Reporter"
                         data-sector="Private"
                         data-governance="Autonomous AI"
+                        data-functional="Health"
                         data-info=" <br>
                         <b>Sector</b>: Private<br><br>
                         <b>Functional Sector</b>: Health <br><br>
@@ -236,6 +254,7 @@
                         data-title="Writing Assistant"
                         data-sector="Private"
                         data-governance="Human-Led with AI-Assistance"
+                        data-functional="Communication"
                         data-info=" <br>
                         <b>Sector</b>: Private<br><br>
                         <b>Functional Sector</b>: Communication <br><br>
@@ -261,6 +280,7 @@
                         data-title="Chest X-Ray Abnormality Detector"
                         data-sector="Public"
                         data-governance="Human-Led with AI-Assistance"
+                        data-functional="Health"
                         data-info=" <br>
                         <b>Sector</b>: Public <br><br>
                         <b>Functional Sector</b>: Health <br><br>
@@ -286,6 +306,7 @@
                         data-title="Mental Health Triage Tool"
                         data-sector="Public"
                         data-governance="Autonomous AI"
+                        data-functional="Health"
                         data-info=" <br>
                         <b>Sector</b>: Public<br><br>
                         <b>Functional Sector</b>: Health <br><br>
@@ -311,6 +332,7 @@
                         data-title="CT Scan Risk Detector"
                         data-sector="Public"
                         data-governance="Human-Led with AI-Assistance"
+                        data-functional="Health"
                         data-info=" <br>
                         <b>Sector</b>: Public <br><br>
                         <b>Functional Sector</b>: Health <br><br>
@@ -336,6 +358,7 @@
                         data-title="Consultation AI Note-Taker"
                         data-sector="Public"
                         data-governance="Human-Led with AI-Assistance"
+                        data-functional="Health"
                         data-info=" <br>
                         <b>Sector</b>: Public <br><br>
                         <b>Functional Sector</b>: Health <br><br>
@@ -361,6 +384,7 @@
                         data-title="Carer-AI Kit Risk Assessor"
                         data-sector="Public"
                         data-governance="Autonomous AI"
+                        data-functional="Health"
                         data-info=" <br>
                         <b>Sector</b>: Public <br><br>
                         <b>Functional Sector</b>: Health <br><br>
@@ -386,6 +410,7 @@
                         data-title="Smart Clinical Triage Tool"
                         data-sector="Public"
                         data-governance="Human-Approved AI"
+                        data-functional="Health"
                         data-info=" <br>
                         <b>Sector</b>: Public <br><br>
                         <b>Functional Sector</b>: Health <br><br>
@@ -411,6 +436,7 @@
                         data-title="Local Government Chatbot"
                         data-sector="Public"
                         data-governance="Human-Led with AI-Assistance"
+                        data-functional="Public Services"
                         data-info=" <br>
                         <b>Sector</b>: Public <br><br>
                         <b>Functional Sector</b>: Public Services <br><br>
@@ -436,6 +462,7 @@
                         data-title="Hyperparameter Optimizer for LLM and RAG Systems"
                         data-sector="Private"
                         data-governance="Human-Approved AI"
+                        data-functional="Technology"
                         data-info=" <br>
                         <b>Sector</b>: Private <br><br>
                         <b>Functional Sector</b>: Technology <br><br>
@@ -463,6 +490,7 @@
                         data-title="OriginTrail Decentralized Knowledge Graph"
                         data-sector="Private"
                         data-governance="Conditionally Autonomous AI"
+                        data-functional="Technology"
                         data-info=" <br>
                         <b>Sector</b>: Private <br><br>
                         <b>Functional Sector</b>: Technology <br><br>
@@ -490,6 +518,7 @@
                         data-title="Automated Imaging Protocol Selector"
                         data-sector="Private"
                         data-governance="Human-Led with AI-Assistance"
+                        data-functional="Health"
                         data-info=" <br>
                         <b>Sector</b>: Private <br><br>
                         <b>Functional Sector</b>: Health <br><br>
@@ -517,6 +546,7 @@
                         data-title="Image Blurring Tool"
                         data-sector="Public"
                         data-governance="Autonomous AI"
+                        data-functional="Public Services"
                         data-info=" <br>
                         <b>Sector</b>: Private <br><br>
                         <b>Functional Sector</b>: Public Services <br><br>

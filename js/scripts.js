@@ -138,23 +138,27 @@ if (e.target === modal) {
 const searchInput = document.getElementById("searchInput");
   const sectorFilter = document.getElementById("sectorFilter");
   const governanceFilter = document.getElementById("governanceFilter");
+  const functionalSectorFilter = document.getElementById("functionalSectorFilter");
 
   function filterGallery() {
     const query = searchInput.value.toLowerCase();
     const sectorValue = sectorFilter.value.toLowerCase();
     const governanceValue = governanceFilter.value.toLowerCase();
+    const functionalSectorValue = functionalSectorFilter.value.toLowerCase();
 
     document.querySelectorAll(".image-item").forEach(item => {
       const img = item.querySelector("img");
       const title = img.getAttribute("data-title")?.toLowerCase() || "";
       const sector = img.getAttribute("data-sector")?.toLowerCase() || "";
       const governance = img.getAttribute("data-governance")?.toLowerCase() || "";
+      const functional = img.getAttribute("data-functional")?.toLowerCase() || "";
 
       const matchesSearch = !query || title.includes(query) || sector.includes(query) || governance.includes(query);
       const matchesSector = !sectorValue || sector === sectorValue;
       const matchesGovernance = !governanceValue || governance === governanceValue;
+      const matchesFunctional = !functionalSectorValue || functional === functionalSectorValue;
 
-      item.style.display = (matchesSearch && matchesSector && matchesGovernance) ? "block" : "none";
+      item.style.display = (matchesSearch && matchesSector && matchesGovernance && matchesFunctional) ? "block" : "none";
     });
   }
 
@@ -162,5 +166,6 @@ const searchInput = document.getElementById("searchInput");
   searchInput.addEventListener("input", filterGallery);
   sectorFilter.addEventListener("change", filterGallery);
   governanceFilter.addEventListener("change", filterGallery); 
+  functionalSectorFilter.addEventListener("change", filterGallery);
 
 
