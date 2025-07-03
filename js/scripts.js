@@ -139,14 +139,15 @@ const searchInput = document.getElementById("searchInput");
 const sectorFilter = document.getElementById("sectorFilter");
 const governanceFilter = document.getElementById("governanceFilter");
 const functionalSectorFilter = document.getElementById("functionalSectorFilter");
-const institutionalCheckboxes = document.querySelectorAll('input[name="institutional"]');
+const institutionalFilter = document.getElementById("institutionalFilter");
+//const institutionalCheckboxes = document.querySelectorAll('input[name="institutional"]');
 
 function filterGallery() {
     const query = searchInput.value.toLowerCase();
     const sectorValue = sectorFilter.value.toLowerCase();
     const governanceValue = governanceFilter.value.toLowerCase();
     const functionalSectorValue = functionalSectorFilter.value.toLowerCase();
-    const selectedInstitutional = Array.from(institutionalCheckboxes).filter(cb => cb.checked).map(cb => cb.value.toLowerCase());
+    const selectedInstitutional = Array.from(institutionalFilter.selectedOptions).map(opt => opt.value.toLowerCase());
 
     document.querySelectorAll(".image-item").forEach(item => {
         const img = item.querySelector("img");
@@ -173,5 +174,4 @@ searchInput.addEventListener("input", filterGallery);
 sectorFilter.addEventListener("change", filterGallery);
 functionalSectorFilter.addEventListener("change", filterGallery);
 governanceFilter.addEventListener("change", filterGallery); 
-institutionalCheckboxes.forEach(cb => cb.addEventListener("change", filterGallery));
-
+institutionalFilter.addEventListener("change", filterGallery);

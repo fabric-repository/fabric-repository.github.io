@@ -56,20 +56,20 @@
                     <option value="public services">Public Services</option>
                 </select>
                 <select id="governanceFilter" style="padding: 8px;">
-                    <option value="">All Outcome Governance Levels</option>
+                    <option value="">All Human Oversight Levels</option>
                     <option value="autonomous ai">Autonomous AI</option>
                     <option value="conditionally autonomous ai">Conditionally Autonomous AI</option>
                     <option value="human-approved ai">Human-Approved AI</option>
                     <option value="human-led with ai-assistance">Human-Led with AI-Assistance</option>
                 </select>
-            </div>
-            <div style="text-align: center; margin-bottom: 30px;">
-                <strong>Institutional Oversight:</strong><br>
-                <label><input type="checkbox" name="institutional" value="ad-hoc practice">Ad-Hoc Practice</label>
-                <label><input type="checkbox" name="institutional" value="organization best practice">Organization Best Practice</label>
-                <label><input type="checkbox" name="institutional" value="organization policy">Organization Policy</label>
-                <label><input type="checkbox" name="institutional" value="industry standard">Industry Standard</label>
-                <label><input type="checkbox" name="institutional" value="regulation">Regulation</label>
+                <select id="institutionalFilter" multiple style="padding: 8px;">
+                    <option value="">All Institutional Oversight Levels</option>
+                    <option value="ad-hoc practice">Ad-Hoc Practice</option>
+                    <option value="organization best practice">Organization Best Practice</option>
+                    <option value="organization policy">Organization Policy</option>
+                    <option value="industry standard">Industry Standard</option>
+                    <option value="regulation">Regulation</option>
+                </select>
             </div>
             <div class="content-section-non-home image-container justify-content-center">
                 <div class="image-item">
@@ -108,6 +108,7 @@
                             data-sector="Civil Society"
                             data-governance="Human-Approved AI"
                             data-functional="Human Rights"
+                            data-institutional="ad-hoc practice,organization best practice, organization policy"
                             data-info=" <br>
                             <b>Sector</b>: Civil Society <br><br>
                             <b>Domain</b>: Human Rights <br><br>
@@ -117,7 +118,7 @@
                             <b>Risks</b>: The trained AI model could make mistakes when the user uses it.            <br><br>
                             <b>Outcome Governance Category</b>: Human-Approved AI
                             <br><br>
-                            <b>Institutional Governance Examples</b>: models should be pulled from a specific commit number (ad-hoc practice), services that use the AI should have a release version (ad-hoc practice), all benchmarks should be saved in a public repository (organization best practice), test sets to assess that performance is maintained (best practice), code implemented is open-sourced (organization policy), services should be covered with unit tests, integration tests, and end-to-end tests (organization policy)
+                            <b>Institutional Governance Examples</b>: models should be pulled from a specific commit number (ad-hoc practice), services that use the AI should have a release version (ad-hoc practice), all benchmarks should be saved in a public repository (organization best practice), test sets to assess that performance is maintained (organization best practice), code implemented is open-sourced (organization policy), services should be covered with unit tests, integration tests, and end-to-end tests (organization policy)
                             <br><br>
                             <b>Explanation of workflow</b>: <br>
                                 <i>Input</i>: The user submits samples to the metadata UI, which then extracts the necessary information to train an AI model. <br>
@@ -134,6 +135,7 @@
                         data-sector="Civil Society"
                         data-governance="Human-Approved AI"
                         data-functional="Human Rights"
+                        data-institutional="ad-hoc practice,organization best practice, organization policy"
                         data-info=" <br>
                         <b>Sector</b>: Civil Society <br><br>
                         <b>Domain</b>: Human Rights <br><br>
