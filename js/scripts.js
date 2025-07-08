@@ -135,29 +135,41 @@ if (e.target === modal) {
 }
 });
 
+
+
+const searchInput = document.getElementById("searchInput");
+const sectorFilter = document.getElementById("sectorFilter");
+const governanceFilter = document.getElementById("governanceFilter");
+const functionalSectorFilter = document.getElementById("functionalSectorFilter");
+//const institutionalFilter = document.getElementById("institutionalFilter");
+//const institutionalCheckboxes = document.querySelectorAll('input[name="institutional"]');
+
 function toggleInstitutionalDropdown() {
   const dropdown = document.getElementById("institutionalCheckboxes");
   dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
 }
+
+document.addEventListener("click", function (event) {
+    const dropdown = document.getElementById("institutionalCheckboxes");
+    const toggle = document.querySelector(".filter-dropdown");
+
+    if (!dropdown.contains(event.target) && !toggle.contains(event.target)) {
+      dropdown.style.display = "none";
+    }
+  });
 
 function getSelectedInstitutional() {
   return Array.from(document.querySelectorAll('#institutionalCheckboxes input[type="checkbox"]:checked'))
     .map(cb => cb.value.toLowerCase());
 }
 
-const searchInput = document.getElementById("searchInput");
-const sectorFilter = document.getElementById("sectorFilter");
-const governanceFilter = document.getElementById("governanceFilter");
-const functionalSectorFilter = document.getElementById("functionalSectorFilter");
-const institutionalFilter = document.getElementById("institutionalFilter");
-//const institutionalCheckboxes = document.querySelectorAll('input[name="institutional"]');
-
 function filterGallery() {
     const query = searchInput.value.toLowerCase();
     const sectorValue = sectorFilter.value.toLowerCase();
     const governanceValue = governanceFilter.value.toLowerCase();
     const functionalSectorValue = functionalSectorFilter.value.toLowerCase();
-    const selectedInstitutional = getSelectedInstitutional;
+    const institutionalSelected = getSelectedInstitutional();
+    //const selectedInstitutional = getSelectedInstitutional;
 
     document.querySelectorAll(".image-item").forEach(item => {
         const img = item.querySelector("img");
@@ -168,12 +180,13 @@ function filterGallery() {
         const institutionalAttr = img.getAttribute("data-institutional")?.toLowerCase() || "";
 
         const institutionalTags = institutionalAttr.split(",").map(tag => tag.trim());
-        const matchesInstitutional = selectedInstitutional.length === 0 || selectedInstitutional.some(tag => institutionalTags.includes(tag))
         
         const matchesSearch = !query || title.includes(query) || sector.includes(query) || functional.includes(query) || governance.includes(query) || institutionalAttr.includes(query);
         const matchesSector = !sectorValue || sector === sectorValue;
         const matchesGovernance = !governanceValue || governance === governanceValue;
         const matchesFunctional = !functionalSectorValue || functional === functionalSectorValue;
+        const matchesInstitutional = institutionalSelected.length === 0 || institutionalSelected.every(tag => institutionalTags.includes(tag));
+
 
         item.style.display = (matchesSearch && matchesSector && matchesFunctional && matchesGovernance && matchesInstitutional) ? "block" : "none";
     });
@@ -184,4 +197,5 @@ searchInput.addEventListener("input", filterGallery);
 sectorFilter.addEventListener("change", filterGallery);
 functionalSectorFilter.addEventListener("change", filterGallery);
 governanceFilter.addEventListener("change", filterGallery); 
-institutionalFilter.addEventListener("change", filterGallery);
+document.querySelectorAll('#institutionalCheckboxes input[type="checkbox"]').forEach(cb => {
+    cb.addEventListener("change", filterGallery);});

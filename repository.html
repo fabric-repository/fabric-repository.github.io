@@ -35,7 +35,8 @@
                     </div>
                 </div>
             </div>
-            <div style="text-align: center; margin-bottom: 20px;">
+            <!--<div style="text-align: center; margin-bottom: 20px;">-->
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 20px; align-items: flex-start;">
                 <input type="text" id="searchInput" placeholder="Search title, sector, or governance..."
                     style="padding: 8px; margin-right: 10px; width: 300px; border-radius: 5px; border: 1px solid #ccc;">
                 <select id="sectorFilter" style="padding: 8px; margin-right: 10px;">
@@ -64,15 +65,26 @@
                 </select>
                 <div style="position: relative; width: 250px;">
                     <div class="filter-dropdown" onclick="toggleInstitutionalDropdown()"
-                        style="padding: 8px; border: 1px solid #ccc; border-radius: 5px; background: #fff; cursor: pointer;">
-                        Institutional Oversight Levels ▼
+                        style="padding: 8px; width: 100%; height: 38px; box-sizing: border-box;
+                                border: 1px solid #333;; border-radius: 5px;
+                                background: #fff; cursor: pointer;
+                                font-size: 14px; color: #333;
+                                display: flex; justify-content: space-between; align-items: center;
+                                box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+                        Institutional Oversight Levels▼
                     </div>
                     <div id="institutionalCheckboxes" class="checkbox-dropdown"
-                        style="display: none; position: absolute; background: white; border: 1px solid #ccc; padding: 10px; z-index: 10; width: 100%; box-shadow: 0px 2px 6px rgba(0,0,0,0.1);">
-                            <label><input type="checkbox" value="autonomous ai"> Autonomous AI</label><br>
-                            <label><input type="checkbox" value="conditionally autonomous ai"> Conditionally Autonomous AI</label><br>
-                            <label><input type="checkbox" value="human-approved ai"> Human-Approved AI</label><br>
-                            <label><input type="checkbox" value="human-led with ai-assistance"> Human-Led with AI-Assistance</label>
+                        style="display: none; position: absolute;
+                            background: white; border: 1px solid #333;
+                            border-radius: 5px; padding: 10px;
+                            z-index: 10; width: 100%;
+                            box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+                            font-size: 14px;">
+                            <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;"><input type="checkbox" value="ad-hoc practice">Ad-Hoc Practice</label>
+                            <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;"><input type="checkbox" value="organization best practice">Organization Best Practice</label>
+                            <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;"><input type="checkbox" value="organization policy">Organization Policy</label>
+                            <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;"><input type="checkbox" value="industry standard">Industry Standard</label>
+                            <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;"><input type="checkbox" value="regulation">Regulation</label>
                     </div>
                 </div>
             </div>
@@ -167,6 +179,7 @@
                         data-sector="Public"
                         data-governance="Conditionally Autonomous AI"
                         data-functional="Education"
+                        data-institutional="ad-hoc practice"
                         data-info=" <br>
                         <b>Sector</b>: Public<br><br>
                         <b>Domain</b>: Education <br><br>
@@ -176,7 +189,7 @@
                         <b>Risks</b>: The AI system can make mistakes which could confuse students.                 <br><br>
                         <b>Human Oversight Level</b>: Conditionally Autonomous AI
                         <br><br>
-                        <b>Institutional Oversight Examples</b>: safety metrics and thresholds chosen (ad-hoc)
+                        <b>Institutional Oversight Examples</b>: safety metrics and thresholds chosen (ad-hoc practice)
                         <br><br>
                         <b>Explanation of workflow</b>: <br>
                             <i>Input</i>: A student takes a quiz and the quiz answers are inputted into the AI system. <br>
@@ -193,6 +206,7 @@
                         data-sector="Public"
                         data-governance="Human-Led with AI-Assistance"
                         data-functional="Justice"
+                        data-institutional="industry standard"
                         data-info=" <br>
                         <b>Sector</b>: Public<br><br>
                         <b>Domain</b>: Justice <br><br>
@@ -219,6 +233,7 @@
                         data-sector="Private"
                         data-governance="Conditionally Autonomous AI"
                         data-functional="Finance"
+                        data-institutional="organization best practice,organization policy, regulation"
                         data-info=" <br>
                         <b>Sector</b>: Private<br><br>
                         <b>Domain</b>: Finance <br><br>
@@ -245,6 +260,7 @@
                         data-sector="Private"
                         data-governance="Autonomous AI"
                         data-functional="Health"
+                        data-institutional="organization best practice,organization policy,regulation"
                         data-info=" <br>
                         <b>Sector</b>: Private<br><br>
                         <b>Domain</b>: Health <br><br>
@@ -271,6 +287,7 @@
                         data-sector="Private"
                         data-governance="Human-Led with AI-Assistance"
                         data-functional="Communication"
+                        data-institutional="ad-hoc practice"
                         data-info=" <br>
                         <b>Sector</b>: Private<br><br>
                         <b>Domain</b>: Communication <br><br>
@@ -297,6 +314,7 @@
                         data-sector="Public"
                         data-governance="Human-Led with AI-Assistance"
                         data-functional="Health"
+                        data-institutional="organization best practice,regulation"
                         data-info=" <br>
                         <b>Sector</b>: Public <br><br>
                         <b>Domain</b>: Health <br><br>
@@ -323,6 +341,7 @@
                         data-sector="Public"
                         data-governance="Autonomous AI"
                         data-functional="Health"
+                        data-institutional="organization policy,industry standard,regulation"
                         data-info=" <br>
                         <b>Sector</b>: Public<br><br>
                         <b>Domain</b>: Health <br><br>
@@ -332,7 +351,7 @@
                         <b>Risks</b>: Patients could be mislabelled if they incorrectly answer or skip questions.   <br><br>
                         <b>Human Oversight Level</b>: Autonomous AI
                         <br><br>
-                        <b>Institutional Oversight Examples</b>: lived experience digital group must sign off (organization policy), project and clinical boards must sign off (organization policy), digital clinical safety standards (industry standards), digital clinical safety assurance (industry standards), equality and health impact assessment (regulation), data protection (regulation), medical device compliance (regulation)
+                        <b>Institutional Oversight Examples</b>: lived experience digital group must sign off (organization policy), project and clinical boards must sign off (organization policy), digital clinical safety standards (industry standard), digital clinical safety assurance (industry standard), equality and health impact assessment (regulation), data protection (regulation), medical device compliance (regulation)
                         <br><br>
                         <b>Explanation of workflow</b>: <br>
                             <i>Input</i>: Patients respond to questions on mental health intake forms. <br>
@@ -349,6 +368,7 @@
                         data-sector="Public"
                         data-governance="Human-Led with AI-Assistance"
                         data-functional="Health"
+                        data-institutional="organization best practice,organization policy,regulation"
                         data-info=" <br>
                         <b>Sector</b>: Public <br><br>
                         <b>Domain</b>: Health <br><br>
@@ -375,6 +395,7 @@
                         data-sector="Public"
                         data-governance="Human-Led with AI-Assistance"
                         data-functional="Health"
+                        data-institutional="industry standard,regulation"
                         data-info=" <br>
                         <b>Sector</b>: Public <br><br>
                         <b>Domain</b>: Health <br><br>
@@ -401,6 +422,7 @@
                         data-sector="Public"
                         data-governance="Autonomous AI"
                         data-functional="Health"
+                        data-institutional="industry standard,regulation"
                         data-info=" <br>
                         <b>Sector</b>: Public <br><br>
                         <b>Domain</b>: Health <br><br>
@@ -410,7 +432,7 @@
                         <b>Risks</b>: A risk of the system is that the carer or nurse is not confident in its readings or in their ability to use the devices for biomarker measurements. Another risk is that the medical device has internal bias towards certain groups. Data safety is also a risk is the carer decides that emergency services need to be called then the data sharing must follow regulation and protocol.               <br><br>
                         <b>Human Oversight Level</b>: Autonomous AI
                         <br><br>
-                        <b>Institutional Oversight Examples</b>: digital clinical safety practices (industry standards), data protection (regulation), medical device compliance (regulation), healthcare compliance (regulation)
+                        <b>Institutional Oversight Examples</b>: digital clinical safety practices (industry standard), data protection (regulation), medical device compliance (regulation), healthcare compliance (regulation)
                         <br><br>
                         <b>Explanation of workflow</b>: <br>
                             <i>Input</i>: A carer takes biomarker measurements of a patient.  <br>
@@ -427,6 +449,7 @@
                         data-sector="Public"
                         data-governance="Human-Approved AI"
                         data-functional="Health"
+                        data-institutional="ad-hoc practice,organization best practice,organization policy,industry standard, regulation"
                         data-info=" <br>
                         <b>Sector</b>: Public <br><br>
                         <b>Domain</b>: Health <br><br>
@@ -453,6 +476,7 @@
                         data-sector="Public"
                         data-governance="Human-Led with AI-Assistance"
                         data-functional="Public Services"
+                        data-institutional="organization policy,regulation"
                         data-info=" <br>
                         <b>Sector</b>: Public <br><br>
                         <b>Domain</b>: Public Services <br><br>
@@ -479,6 +503,7 @@
                         data-sector="Private"
                         data-governance="Human-Approved AI"
                         data-functional="Technology"
+                        data-institutional="organization best practice"
                         data-info=" <br>
                         <b>Sector</b>: Private <br><br>
                         <b>Domain</b>: Technology <br><br>
@@ -507,6 +532,7 @@
                         data-sector="Private"
                         data-governance="Conditionally Autonomous AI"
                         data-functional="Technology"
+                        data-institutional="ad-hoc practice,organization policy"
                         data-info=" <br>
                         <b>Sector</b>: Private <br><br>
                         <b>Domain</b>: Technology <br><br>
@@ -518,7 +544,7 @@
                         <br><br>
                         <b>Human Oversight Level</b>: Conditionally Autonomous AI
                         <br><br>
-                        <b>Institutional Oversight Examples</b>: user and/or community led verification of knowledge graph (ad-hoc practice)
+                        <b>Institutional Oversight Examples</b>: user and/or community led verification of knowledge graph (ad-hoc practice), open-source code (organization policy)
                         <br><br>
                         <b>Explanation of workflow</b>: <br>
                             <i>Input</i>: A user submits data (e.g., PDFs) to the AI system.  <br>
@@ -535,6 +561,7 @@
                         data-sector="Private"
                         data-governance="Human-Led with AI-Assistance"
                         data-functional="Health"
+                        data-institutional="organization best practice,industry standard,regulation"
                         data-info=" <br>
                         <b>Sector</b>: Private <br><br>
                         <b>Domain</b>: Health <br><br>
@@ -546,7 +573,7 @@
                         <br><br>
                         <b>Human Oversight Level</b>: Human-Led with AI-Assistance
                         <br><br>
-                        <b>Institutional Oversight Examples</b>: in-house standard operating procedures like equipment settings and staff competency protocols (organization best practices), mammography techniques like automatic exposure control and acceptable dose levels (industry best practice), patient communication and documentation (industry best practice), basic safety standards for radiation protection (regulation), personnel qualification (regulation), equipment related testing, quality control, and monitoring (regulation), informed consent (regulation)
+                        <b>Institutional Oversight Examples</b>: in-house standard operating procedures like equipment settings and staff competency protocols (organization best practice), mammography techniques like automatic exposure control and acceptable dose levels (industry best practice), patient communication and documentation (industry standard), basic safety standards for radiation protection (regulation), personnel qualification (regulation), equipment related testing, quality control, and monitoring (regulation), informed consent (regulation)
                         <br><br>
                         <b>Explanation of workflow</b>: <br>
                             <i>Input</i>: The patient’s data and doctor’s intake information go into the AI system.  <br>
@@ -563,6 +590,7 @@
                         data-sector="Public"
                         data-governance="Autonomous AI"
                         data-functional="Public Services"
+                        data-institutional="organization policy,regulation"
                         data-info=" <br>
                         <b>Sector</b>: Private <br><br>
                         <b>Domain</b>: Public Services <br><br>
@@ -583,6 +611,35 @@
                             ">
                     </div>
                     <p class="image-title">Image Blurring Tool</p>
+                </div>
+                <div class="image-item">
+                    <div class="image-frame">
+                    <img src="assets/img/use-cases/.png" alt=""
+                        data-title="Call Center Virtual Assistant"
+                        data-sector="Public"
+                        data-governance="Conditionally Autonomous AI"
+                        data-functional="Public Services"
+                        data-institutional="organization best practice,organization policy,industry standard,regulation"
+                        data-info=" <br>
+                        <b>Sector</b>: Public <br><br>
+                        <b>Domain</b>: Public Services <br><br>
+                        <b>Task</b>: The AI system is a multilingual virtual assistant that helps to process service requests over the phone, particularly for public payment systems. The AI system can check the status of payments and respond to user specific inquiries around the clock.  
+                        <br> <br>
+                        <b>Intent</b>: The AI system aims to reduce the administrative workload on employees and provide users with reliable support for common issues during and after business hours.                    
+                        <br><br>
+                        <b>Risks</b>: Incorrect or incomplete responses from the AI system could lead users to be misinformed about payment status or procedures. The AI system could not understand the user’s request.
+                        <br><br>
+                        <b>Human Oversight Level</b>: Conditionally Autonomous AI
+                        <br><br>
+                        <b>Institutional Oversight Examples</b>: post-deployment monitoring (organization best practice), privacy by design (organization best practice), open-source development (organization policy), ethics impact assessment (organization policy), inclusive access mandate for multilingual and multimodal functionality (organization policy), AI procurement practices (organization policy), data security (industry standard), risk-assessment and management (regulation), data protection (regulation), automated decision-making transparency (regulation) 
+                        <br><br>
+                        <b>Explanation of workflow</b>: <br>
+                            <i>Input</i>: A user calls the support line and ask their question(s).  <br>
+                            <i>Process</i>: The AI system processes the question using natural language understanding and generates a response.    <br>
+                            <i>Output</i>: If the AI system can answer the query, it responds automatically. If not, and it is within business hours, the user is sent through to a human operator; otherwise, if out of business hours, the user is recommended to call back during operating times to speak with a human operator.  
+                            ">
+                    </div>
+                    <p class="image-title">Call Center Virtual Assistant</p>
                 </div>
             </div>
             <!-- Modal Structure -->
