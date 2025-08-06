@@ -24,8 +24,8 @@ export default function HomePage() {
           <h2 className="text-3xl md:text-4xl font-semibold mb-6">Key Resources</h2>
           <p className="text-lg max-w-3xl text-gray-600">
                 Research Paper (coming soon) <br />
-                Project Blog (coming soon) - The Alan Turing Institute <br />
-                Policy Brief (coming soon) - The University of Cambridge <br />
+                Project Blog (coming soon) <br />
+                Policy Brief (coming soon) <br />
 
          </p>
         </div>
