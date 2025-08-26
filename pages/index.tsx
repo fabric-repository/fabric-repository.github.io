@@ -23,7 +23,7 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto text-left">
           <h2 className="text-3xl md:text-4xl font-semibold mb-6">Key Resources</h2>
           <p className="text-lg max-w-3xl text-gray-600">
-                Research Paper (coming soon) <br />
+                Research Paper (published version coming soon) [<a href="https://arxiv.org/abs/2508.14119" class="text-blue-600 underline hover:text-blue-800">arXiv version</a>]<br />
                 Project Blog (coming soon) <br />
                 Policy Brief (coming soon) <br />
 
