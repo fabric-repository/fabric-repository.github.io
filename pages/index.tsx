@@ -24,8 +24,8 @@ export default function HomePage() {
           <h2 className="text-3xl md:text-4xl font-semibold mb-6">Key Resources</h2>
           <p className="text-lg max-w-3xl text-gray-600">
                 Research Paper (published version coming soon) [<a href="https://arxiv.org/abs/2508.14119" className="text-blue-600 underline hover:text-blue-800">arXiv version</a>]<br />
-                Project Blog [<a href="/policy-brief.pdf" target = "_blank" rel="noopener noreferrer" className="text-blue-600 underline hover:text-blue-800">View PDF</a>] <br />
-                Policy Brief (coming soon) <br />
+                Policy Brief [<a href="/policy-brief.pdf" target = "_blank" rel="noopener noreferrer" className="text-blue-600 underline hover:text-blue-800">View PDF</a>] <br />
+                Project Blog (coming soon) <br />
 
          </p>
         </div>
