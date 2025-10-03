@@ -7,7 +7,8 @@
     "start": "next start",
     "lint": "next lint",
     "export": "next build",
-    "output": "export"
+    "output": "export",
+    "deploy": "npm run build && rm -rf docs/ && cp -r out/ docs/ && rm -rf docs/404/ && touch docs/.nojekyll"
   },
   "dependencies": {
     "autoprefixer": "^10.4.14",
