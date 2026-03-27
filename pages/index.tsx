@@ -13,7 +13,7 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto text-left">
           <h2 className="text-3xl md:text-4xl font-semibold mb-6">What does AI governance look like in practice?</h2>
           <p className="text-lg max-w-3xl text-gray-600">
-                To address this question, we release Fabric, a public repository of AI system deployments in a soon to be published AAAI/ACM AIES 2025 conference paper. 
+                To address this question, we release Fabric, a public repository of AI system deployments and their levels of oversight as described in a AAAI/ACM AIES 2025 conference paper. The repository is in the paper's appendix on arXiv. 
                 The initial AI use cases were collected through semi-structured interviews with AI practitioners, 
                 where we learned about the AI workflows, levels of oversight, and co-designed diagrams of the AI workflows.          </p>
         </div>
